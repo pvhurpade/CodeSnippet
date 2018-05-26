@@ -43,6 +43,11 @@ object List{
       }
   }
 
+  def foldRight[A,B](as: List[A], z: B) (f: (A,B) => B): B = as match {
+    case Nil => z
+    case Cons(x,xs) => f(x,foldRight(xs,z)(f))
+  }
+
 
 }
 
@@ -57,7 +62,8 @@ object MyModule {
 
   def callList(): Unit = {
     //println(List(1,2,3,4))
-    println(List.product(List(1,2,3,4)))
+    println(List.foldRight(List(1,2,3,4),1)((a,b) => a * b))
+
   }
 
   def main(args: Array[String]): Unit = {
