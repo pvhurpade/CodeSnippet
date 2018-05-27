@@ -1,2 +1,2 @@
 # CodeSnippet
-Contains handy code requires for competitive programming
+Code I struggled to write, Useful, New Learning
